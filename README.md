@@ -24,6 +24,8 @@ Upstream repository:
 |---|---|
 | `ToolKeypoint` | 2D pixel keypoints (tip / trigger optional / handle) for a detected tool |
 | `ToolKeypointArray` | Array of `ToolKeypoint` |
+| `ToolKeypoint3D` | Single 3D keypoint with validity flag |
+| `ToolKeypoint3DArray` | Per-object array of 3D keypoints |
 | `ToolPose6D` | Full 6D pose estimate for a tool |
 | `ToolPose6DArray` | Array of `ToolPose6D` |
 

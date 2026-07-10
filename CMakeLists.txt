@@ -14,6 +14,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   # ── Tool localisation messages ────────────────────────────────────────────
   "msg/ToolKeypoint.msg"
   "msg/ToolKeypointArray.msg"
+  "msg/ToolKeypoint3D.msg"
+  "msg/ToolKeypoint3DArray.msg"
   "msg/ToolPose6D.msg"
   "msg/ToolPose6DArray.msg"
   "msg/TipsEmbedding.msg"
