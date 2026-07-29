@@ -6,6 +6,14 @@ string query
 # Set to -1.0 to run until manually cancelled or preempted by a new goal.
 float32 timeout_sec
 
+# Relative contribution of the visual similarity term in the action ranking.
+# If both weights are 0.0, the server falls back to its internal default.
+float32 visual_weight
+
+# Relative contribution of the label similarity term in the action ranking.
+# If both weights are 0.0, the server falls back to its internal default.
+float32 label_weight
+
 ---
 
 # ── Result (sent on completion / preemption / timeout) ────────────────────────
@@ -21,14 +29,15 @@ float32 duration_sec
 # Total number of TipsEmbeddingArray frames evaluated.
 int32 n_frames_processed
 
-# All Object_N seen during the action, sorted by peak visual_sim descending.
+# All Object_N seen during the action, sorted by weighted_score descending.
 eut_scene_msgs/TipsObjectQueryMatch[] ranked_matches
 
-# Best match summary (highest peak visual_sim).
+# Best match summary (highest weighted_score).
 string  best_match_object_id
 string  best_match_category
 float32 best_match_visual_sim
 float32 best_match_label_sim
+float32 best_match_weighted_score
 
 # Absolute path to the saved JPEG crop of the best match (empty if none saved).
 string best_match_crop_path
@@ -42,7 +51,7 @@ int32   frame_number
 # Elapsed seconds since the goal was accepted.
 float32 elapsed_sec
 
-# Per-object scores for the current frame only.
+# Per-object scores for the current frame only, including the combined weighted score.
 eut_scene_msgs/TipsObjectQueryMatch[] current_frame_matches
 
 # Running best match across all processed frames so far.

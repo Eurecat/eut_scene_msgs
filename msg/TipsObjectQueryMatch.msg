@@ -23,6 +23,9 @@ float32 visual_sim
 # Cosine similarity: query text embedding vs TIPS encoding of category label.
 float32 label_sim
 
+# Combined score used by the action server to rank this object.
+float32 weighted_score
+
 # Bounding box — normalised [0, 1] relative to the original camera frame.
 float32 bbox_xcenter
 float32 bbox_ycenter
