@@ -8,6 +8,10 @@ std_msgs/Header header
 # Full source entity (includes track_id, label, class_id, bbox, contour).
 hri_msgs/Entity entity
 
+# Full source visual embedding for this entity in this frame.
+# This allows consumers to use identity + embedding from a single message.
+TipsEmbedding embedding
+
 # ── Identity fields ────────────────────────────────────────────────────────────
 # Stable "Object_N" ID (empty string "" if min_embeddings_to_assign not yet reached).
 string object_id

@@ -14,7 +14,7 @@ string query
 int32  patch_row        # row index in (H_patches × W_patches) grid
 int32  patch_col        # col index
 
-# Cosine similarity score of the winning patch against the text query)
+# Cosine similarity score of the winning patch against the text query
 float32 cosine_similarity
 
 # Bounding box of the source entity crop in the original frame.

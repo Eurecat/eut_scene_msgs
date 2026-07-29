@@ -56,3 +56,11 @@ Produced by the `tips_text_matcher` ROS 2 package.
 |---|---|
 | `TipsPatchMatch` | Best spatial patch for a text query: full `hri_msgs/Entity`, `patch_row/col`, `cosine_similarity`, `query` string |
 | `TipsPatchMatchArray` | Array of `TipsPatchMatch`, one per entity per frame. Published on `/tips/patch_matches` |
+
+### TIPS v2 action query
+Produced by the `tips_text_matcher` ROS 2 package.
+
+| Interface | Description |
+|---|---|
+| `TipsObjectQueryMatch` | Per-object action score item used in both feedback and result. Contains full `hri_msgs/Entity`, full `TipsObjectIdentity` payload (when available), category, `visual_sim`, `label_sim`, bbox, and convenience `object_id` |
+| `TipsObjectQuery` (action) | Runtime text query API on `/tips/query_object`. Feedback includes per-frame matches and running best-so-far (`has_best_match_so_far`, `best_match_so_far`, `best_match_unique_id`). Result returns ranked peak matches and best-match summary |

@@ -44,3 +44,12 @@ float32 elapsed_sec
 
 # Per-object scores for the current frame only.
 eut_scene_msgs/TipsObjectQueryMatch[] current_frame_matches
+
+# Running best match across all processed frames so far.
+bool has_best_match_so_far
+eut_scene_msgs/TipsObjectQueryMatch best_match_so_far
+
+# Stable ID for the running best match.
+# Uses object_id when identity DB is enabled and confirmed.
+# Falls back to the source entity.track_id string otherwise.
+string best_match_unique_id

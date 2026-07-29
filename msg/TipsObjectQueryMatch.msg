@@ -3,7 +3,12 @@
 # similarity (query vs TIPS text encoding of the YOLO category label).
 # Uses full hri_msgs/Entity from: https://github.com/Eurecat/hri_msgs
 
+# Full identity payload for this entity in the current frame.
+# Empty/default when identity DB is disabled or no identity is available.
+eut_scene_msgs/TipsObjectIdentity identity
+
 # Stable Object_N from identity DB (empty if identity_db disabled).
+# Kept for convenience/backward compatibility.
 string  object_id
 
 # Full source entity from TipsEmbedding.entity.
