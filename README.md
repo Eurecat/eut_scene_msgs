@@ -3,7 +3,7 @@
 ROS2 interface package for scene understanding pipelines.
 
 Provides message definitions for:
-- tool keypoints (tip/handle)
+- tool keypoints (tip/trigger/handle, plus side_handle for hammer drills)
 - tool 6D pose outputs
 - **TIPS v2 dense visual embeddings** (`TipsEmbedding`, `TipsEmbeddingArray`)
 - **TIPS v2 text-guided spatial patch matches** (`TipsPatchMatch`, `TipsPatchMatchArray`)
@@ -33,6 +33,9 @@ Upstream repository:
 - `tip_2d`, `trigger_2d`, `handle_2d` are `geometry_msgs/Point` in pixel space.
 - `z` is unused and kept at `0.0`.
 - Missing optional keypoints are represented with `x = -1.0`, `y = -1.0`.
+- `keypoint_names`, `keypoints_2d`, `keypoint_confidences` hold every keypoint
+  of the object in the same order (for example `tip`, `trigger`, `handle`,
+  `side_handle` for a hammer drill). Look keypoints up by name.
 
 ### TIPS v2 visual embeddings
 Produced by the `tips_visual_embedder` ROS 2 package.
