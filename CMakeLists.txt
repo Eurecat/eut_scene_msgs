@@ -18,6 +18,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ToolKeypoint3DArray.msg"
   "msg/ToolPose6D.msg"
   "msg/ToolPose6DArray.msg"
+  "msg/Object3D.msg"
+  "msg/Object3DArray.msg"
   "msg/TipsEmbedding.msg"
   "msg/TipsEmbeddingArray.msg"
   "msg/TipsPatchMatch.msg"
