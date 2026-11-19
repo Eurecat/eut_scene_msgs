@@ -24,6 +24,8 @@ rosidl_generate_interfaces(${PROJECT_NAME}
   "msg/ObjectEvidenceArray.msg"
   "msg/ObjectHypothesis.msg"
   "msg/ObjectHypothesisArray.msg"
+  "msg/UnifiedObject.msg"
+  "msg/UnifiedObjectArray.msg"
   "msg/TipsEmbedding.msg"
   "msg/TipsEmbeddingArray.msg"
   "msg/TipsPatchMatch.msg"

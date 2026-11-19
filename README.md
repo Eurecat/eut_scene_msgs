@@ -44,6 +44,8 @@ Upstream repository:
 | `ObjectEvidenceArray` | Array of `ObjectEvidence` |
 | `ObjectHypothesis` | What is known about one object over time: `subclass` (`unknown` until confirmed), candidate probabilities, `state` (DETECTED / NEEDS_VIEW / GATHERING / CONFIRMED / LOST), `missing_view` + suggested camera pose, last pose, `attributes_json` |
 | `ObjectHypothesisArray` | Array of `ObjectHypothesis`, published by the object reasoner |
+| `UnifiedObject` | One object with every source combined (objects counterpart of `/humans/unified`): id, class + subclass, state, detection score, stable pose or box pose + size, 3D functional / grasp points, missing view + suggested camera pose, reason |
+| `UnifiedObjectArray` | Array of `UnifiedObject`, published by the object reasoner on `/objects/unified` |
 
 Data only: `missing_view` states which view is missing; it is not a command.
 
