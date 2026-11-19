@@ -37,6 +37,16 @@ Upstream repository:
   of the object in the same order (for example `tip`, `trigger`, `handle`,
   `side_handle` for a hammer drill). Look keypoints up by name.
 
+### Object hypotheses over time
+| Message | Description |
+|---|---|
+| `ObjectEvidence` | One per-frame observation answering one question about one object (`question`, `source`, candidate `hypotheses` + `likelihoods`, `view_quality`, `view_issue`, optional suggested camera pose) |
+| `ObjectEvidenceArray` | Array of `ObjectEvidence` |
+| `ObjectHypothesis` | What is known about one object over time: `subclass` (`unknown` until confirmed), candidate probabilities, `state` (DETECTED / NEEDS_VIEW / GATHERING / CONFIRMED / LOST), `missing_view` + suggested camera pose, last pose, `attributes_json` |
+| `ObjectHypothesisArray` | Array of `ObjectHypothesis`, published by the object reasoner |
+
+Data only: `missing_view` states which view is missing; it is not a command.
+
 ### TIPS v2 visual embeddings
 Produced by the `tips_visual_embedder` ROS 2 package.
 
